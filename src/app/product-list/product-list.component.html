@@ -1,0 +1,38 @@
+<div *ngFor="let product of products;index as productId">
+
+    <h3>
+      <a [title]="product.name + 'details'" [routerLink]="['/products',productId]">
+        {{ product.name }}
+      </a>
+    </h3>  
+    <p>{{ product.description}}</p>
+  </div>
+  
+
+ <div>Pipes:</div> 
+ <p>{{name | uppercase}}</p>
+
+ <div>Property Binding:</div>
+
+ <img alt="item" [src]="itemImageUrl">
+
+ <div>Attribute Binding</div>
+ <img [attr.width]="imageWidth" [attr.height]="imageHeight" [attr.src]="imagePath">
+
+ <div>Event Binding</div>
+
+ <button (click)="onSave()">Alert Meassage</button>
+
+ <br>
+ 
+ <div>Two Way Data Binding</div>
+
+ <input [(ngModel)]="userName" >
+    {{userName}}
+
+<br>
+  Attribute Directive:
+  <p app-product-list>Highlight Me</p>
+
+<h3>Form Example</h3>
+<button (click)="form()">form</button>
